@@ -75,7 +75,17 @@ Quiero: cera sesion.
 Para: tener mayor manejo de nuestra cuenta, ya que no siempre queremos tener nuestras sesiones abiertas sea por gusto o por seguridad.
 
 
-## 1. Preámbulo
+## 1. PROTOTIPO DE BAJA FIDELIDAD 
+
+<p float="left">
+  <img src="src/imagenes/PrototipoBaja1.jpeg" width="700" >
+  <img src="src/imagenes/PrototipoBaja2.jpeg" width="700" >
+</p>
+
+## 1. PROTOTIPO DE ALTA FIDELIDAD 
+<p float="left">
+  <img src="src/imagenes/prototipoAlta.jpeg" width="700" >
+</p>
 
 Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
 sociales han invadido nuestras vidas. Las amamos u odiamos, y muchos no podemos

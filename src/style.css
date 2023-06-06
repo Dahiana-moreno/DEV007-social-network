@@ -2,12 +2,33 @@ html,
 body {
   width: 100%;
   height: 100%;
+margin: 0px;
 
 }
 header{
     font-size: 18px;
 }
-ul {
+
+#vista1 {
+  background-image: url("./imagenes/imagenes/imgn.jpg");
+ display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+  
+    background-size: 50%;
+    background-position: left 1px;
+    background-repeat: no-repeat;
+    height: 500px;
+
+
+}
+/*div.caja{
+
+  background-color:#4CAF50; 
+} */
+
+
+.navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -35,7 +56,239 @@ li a {
 li a:hover:not(.active) {
     background-color: #111;
 }
+#form-loginup{
+  top: 20px;
+  width: 50%;
+margin-left: 50%;
+}
 
 .active {
     background-color: #4CAF50;
 }
+
+
+
+
+.signup {
+    text-align: center;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  .signoff{
+  text-align: center;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px; /* Limitar el ancho máximo de la ventana modal */
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .modal-buttons {
+    text-align: right;
+    margin-top: 20px;
+  }
+
+  .barra {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+
+  }
+
+  .barra:focus {
+    outline: none;
+    border-color: #5c9eff;
+    box-shadow: 0 0 8px #5c9eff;
+  }
+
+  .close-btn {
+    margin-right: 20px; /*espacio entre ambos botones */
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    width:44%;
+
+  }
+  .close-bton {
+    margin-right: 20px; /*espacio entre ambos botones */
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    width:50%;
+  }
+  
+  .submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    width:44%;
+  }
+  .social-media{
+    width:100%;
+    columns:2;
+  }
+.sign-up-divider{
+/*  background-color: #4CAF50;  */
+
+  text-align: center;
+  font-size: 18px;
+}
+
+  .google{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    width:47%;
+  
+  }
+  .github{
+    background-color: #b5b0b0;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    width:47%;
+  }
+  .container-text{
+    background-color: #bebcbc;
+    text-align: center;
+    margin: 2%;
+    font-size: 18px;
+  }
+#btn-task-save{
+  background-color: #4CAF50;
+  color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 16px;
+    text-align: center;
+  
+  
+    font-size: 14px;
+    cursor: pointer;
+    width:20%;
+
+}
+#task-title{
+/*background-color: #4CAF50; */
+border-radius: 30px;
+  text-align: center;
+  width: 50%;
+  height: 40px;
+  font-size: 18px;
+}
+.location{
+   /* background-color: #4CAF50; */
+   border-radius: 30px;
+   text-align: center;
+   width: 40%;
+   height: 40px;
+   font-size: 18px;
+}
+#task-content{
+ /* background-color: #4CAF50; */
+  border-radius: 30px;
+  text-align: center;
+  width: 50%;
+  height: 180px;
+  font-size: 18px;
+ resize: none;  /*Resize opcion de ampliar*/
+  
+}
+
+.list-group-item{     /* Lista de Posts*/
+ 
+  width: 90%;
+  left: 0px;
+  right: 0px;;
+  border-style:ridge;
+  margin: 2%;
+  list-style-type: none;
+ text-align: center;
+  overflow: hidden;
+  background-color:#ffffff;
+  border-radius: 18px;
+
+
+}
+
+.btn-delete, .btn-edit{
+  float:right;
+}
+
+.bottons{
+  background-color: #4CAF50;
+}
+  
+  /* Estilos para pantallas más pequeñas */
+  @media screen and (max-width: 600px) {
+    .modal-content {
+      width: 90%;
+      margin: 38% auto;
+    }
+  }

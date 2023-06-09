@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";  // autenticacion -->
+import { createUserWithEmailAndPassword, signOut, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";  // autenticacion -->
 import { collection, onSnapshot} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 import {auth, saveForm, db} from './firebase.js';
@@ -7,12 +7,8 @@ import { setupPosts } from './postList.js';
 import './login.js';
 //import './postList.js'
 //import './loginGithub.js';
-
 window.addEventListener('DOMContentLoaded',()=>{
- 
-
 })
-
 
 //CREAR CUENTAS
 const formLoginup = document.querySelector('#form-loginup')
@@ -24,7 +20,7 @@ formLoginup.addEventListener('submit', async (e) => {
   console.log(email, password);
   saveForm(email, password);
 try{
-    const userCredentials = await createUserWithEmailAndPassword(auth, email, password)
+    const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
 console.log(userCredentials);
 
 } catch (error){
@@ -65,10 +61,7 @@ vista1.forEach(link => link.style.display = 'block');
     loggedInLinks.forEach(link => link.style.display = 'none');  
     loggedOutLinks.forEach(link => link.style.display = 'block');  
 
-  }
-}
-
-
+  }}
 
 onAuthStateChanged(auth, async (user) => {   
 loginCheck(user);
@@ -76,14 +69,15 @@ loginCheck(user);
   if (user) {
  onSnapshot(collection(db, 'posts'), (querySnapshot) => {
   setupPosts(querySnapshot.docs);
-
-
+//console.log(user.displayName)
 //console.log(querySnapshot.docs); imprime el array con los posts, luego de iniciar sesion
 })}else{
  setupPosts([]);
   }
   loginCheck(user)
 })
+
+
 
 
 

@@ -52,6 +52,7 @@ formLogin.addEventListener('submit', async (e) => {
   const passwordd=document.querySelector('#login-password').value;
  // console.log(email, password);
   //saveForm(email, password);
+ // formLoginup.reset()
 try{
     const credentials = await signInWithEmailAndPassword(auth, mail, passwordd)
 console.log(credentials);
@@ -59,15 +60,17 @@ console.log(credentials);
 } catch (error){
 
  // console.log(error);
+ alert("Se ha producido un error " + error.message)   
 
-
+formLogin.reset()  //limpia el formulario luego de su envio
+//
 }
 
 
 
 
-formLoginup.reset()  //limpia el formulario luego de su envio
+//formLoginup.reset()  //limpia el formulario luego de su envio
 
 
 
-});
+}  );

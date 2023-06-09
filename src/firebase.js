@@ -52,9 +52,9 @@ export const deleteTask = id => deleteDoc(doc(db, 'posts', id))
 
 export const getTask = id => getDoc(doc(db, 'posts', id));
 
-export const refPost = id => updateDoc(doc(db, 'posts', id));  // esta la utilizo para la funcion LIKE.
 
 export const updateTask = (id, newFields) => updateDoc (doc(db, 'posts', id), newFields)
 //console.log(id)
+
 
 

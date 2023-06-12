@@ -20,6 +20,9 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 
+
+
+
 export const db = getFirestore(app);
 
  export const postsRef = collection(db, 'post');
@@ -38,6 +41,8 @@ console.log(usuario);
 
 
 //console.log(usuario);
+
+
 
 
   export const saveTask = (title, location, content, /*imgen */) => {

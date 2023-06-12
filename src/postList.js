@@ -24,7 +24,7 @@ taskForm.addEventListener('submit', (e) => {
     title: title.value,
     location : location.value,
     content: content.value,
-  //  imgen: imgen.value,
+  //imgen: imgen.value,
 
   });
   editStatus = false;
@@ -55,8 +55,10 @@ let html = ''
             <p>${post.user}</p>
 
             <div class="bottons">                  
-            <button Class="likeButton" data-id ="${doc.id}" >Like</button>                     
-            <span class = "likeCount">${post.likes}</span>
+            <button Class="likeButton" data-id ="${doc.id}" >
+            <img id = "likee" src="./imagenes/imagenes/reaction-love.png"  alt=""/>
+            </button>                     
+            <span class = "likeCount">${post.likes} reacciones </span>
             <button class ="btn-delete" data-id ="${doc.id}">Delete</button>
             <button class ="btn-edit" data-id ="${doc.id}">Edit</button>
             </div>

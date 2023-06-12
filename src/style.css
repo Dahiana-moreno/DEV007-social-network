@@ -289,7 +289,12 @@ border-radius: 30px;
 .bottons{
   background-color: #4CAF50;
 }
-  
+
+#likee{
+  width: 20px;
+  cursor: pointer;
+}
+
   /* Estilos para pantallas más pequeñas */
   @media screen and (max-width: 600px) {
     .modal-content {

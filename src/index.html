@@ -41,7 +41,7 @@
       </form>
     </section>
     <ul class="navbar">
-      
+      <li><a class="nav-link perfil" href="#" id="perfil">Perfil</a></li>
       <li style="float:right"><a class="nav-link logged-in" href="#" id="logout">Cerrar Sesión</a></li>
     </ul>
   <!--  </header>  -->
@@ -60,9 +60,10 @@
          <label for="title">Descripcion:</label>    
            <p>   <textarea id="task-content" placeholder="Escribe tu publicación"></textarea></p>
            <input type="file" id="post-image" accept="image/*">
+        
            <br>
            <br>
-           <button id="btn-task-save">Publicar</button>
+           <button id="btn-task-save" <!-onclick="uploadImage()">Publicar</button>
             </div>
             </form>
             

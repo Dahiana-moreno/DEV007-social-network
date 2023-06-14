@@ -19,47 +19,36 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-
-
-
-
-export const db = getFirestore(app);
-
- export const postsRef = collection(db, 'post');
-
+//obtiene base de datos firestore
+export const db = getFirestore(app); 
+//anade coleccion de post
+export const postsRef = collection(db, 'post');
+//resgistro con correo y contrasena
 export const saveForm = (email, password) =>
  
 addDoc(collection(db, 'login '),{email, password} 
-); //recuerde el espacio
-//console.log(user, mail);
+); 
+//obtiene autenticaccion
 export const auth = getAuth(app);
+//cuando existe un cambio en la sesion del usuario se obtiene ese usuario
 onAuthStateChanged(auth, async (user) => {
 const usuario =user.displayName;
 console.log(usuario);
-
 })
 
-
-//console.log(usuario);
-
-
-
-
-  export const saveTask = (title, location, content, /*imgen */) => {
+//agregar a la coleccion post el titulo la ubicacion y el contenido 
+export const saveTask = (title, location, content, /*imgen */) => {
   addDoc(collection(db, 'posts'),{title, location, content /*imgen} */});
-   // console.log(title,description)
   }
-   export const getTasks = () => getDocs(collection(db, 'posts'));
- // export const onGetTask = (callback )=> { addDoc(collection(db, 'posts').onSnapshot(callback))}
-
- //export const deleteTask = id => console.log(id);
+//se obtienen todos los documentos de la coleccion post
+export const getTasks = () => getDocs(collection(db, 'posts'));
+// elimina la coeccion asignada a un id
 export const deleteTask = id => deleteDoc(doc(db, 'posts', id))
-
+//obtiene una coleccion por id
 export const getTask = id => getDoc(doc(db, 'posts', id));
-
-
+//actualiza un docuemento por id
 export const updateTask = (id, newFields) => updateDoc (doc(db, 'posts', id), newFields)
-//console.log(id)
+
 
 
 

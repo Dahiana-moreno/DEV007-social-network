@@ -2,91 +2,70 @@ html,
 body {
   width: 100%;
   height: 100%;
-margin: 0px;
-
+  margin: 0px;
+  background-color: #888888;
+  font-family:'Times New Roman', Times, serif
 }
-header{
-    font-size: 18px;
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
 }
 
 #vista1 {
   background-image: url("./imagenes/imagenes/imgn.jpg");
- display: flex;
-    justify-content: space-between; 
-    align-items: flex-start;
-  
-    background-size: 50%;
-    background-position: left 1px;
-    background-repeat: no-repeat;
-    height: 500px;
-
-
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-size: 50%;
+  background-position: left 1px;
+  background-repeat: no-repeat;
+  height: 500px;
 }
-/*
-div.caja{
-
-  background-color:#5be360; 
-  margin-bottom: 800px;
-
-} 
-*/
-
 .navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #074c7d;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  /*separar los elementos */
 }
 
 li {
-    float: left;
-    border-right:1px solid #bbb;
+  float: left;
+  border-right: 1px solid #5675a9;
+  
 }
 
 li:last-child {
-    border-right: none;
+  border-right: none;
 }
 
 li a {
-   display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  background-color: #53004d;
+  text-align: center;
+  padding: 14px 16px;
+  color: #fefefe;
 }
 
-li a:hover:not(.active) {
-    background-color: #111;
-}
-#form-loginup{
-  
+
+#form-loginup {
   width: 50%;
-margin-left: 50%;
+  margin-left: 50%;
 
 }
 
 .active {
-    background-color: #4CAF50;
+  background-color: #53004d;
 }
 
-
-
-
 .signup {
-    text-align: center;
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-  }
-
-  .signoff{
   text-align: center;
   display: none;
   position: fixed;
@@ -96,209 +75,249 @@ margin-left: 50%;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
-  
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px; /* Limitar el ancho máximo de la ventana modal */
-  }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-  }
-  
-  .modal-buttons {
-    text-align: right;
-    margin-top: 20px;
-  }
 
-  .barra {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 20px;
+.signoff {
+  text-align: center;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
-  }
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  /* Limitar el ancho máximo de la ventana modal */
+}
 
-  .barra:focus {
-    outline: none;
-    border-color: #5c9eff;
-    box-shadow: 0 0 8px #5c9eff;
-  }
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-  .close-btn {
-    margin-right: 20px; /*espacio entre ambos botones */
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer;
-    width:44%;
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
 
-  }
-  .close-bton {
-    margin-right: 20px; /*espacio entre ambos botones */
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer;
-    width:42%;
-  }
-  
-  .submit-btn {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer;
-    width:42%;
-  }
-  .social-media{
-    width:100%;
-    columns:2;
-  }
-.sign-up-divider{
-/*  background-color: #4CAF50;  */
+.barra {
+  padding: 8px;
+  font-size: 15px;
+  width: 82%;
+  margin-bottom: 5px;
+  height: 10px;
+  border-radius: 50px;
+ 
+}
+.formLogin {
+  color: rgba(0, 0, 0, 0.86);
+  text-align: center;
+
+}
+
+.barra:focus {
+  outline: none;
+  border-color: #5c9eff;
+  box-shadow: 0 0 8px #5c9eff;
+}
+
+.close-bton {
+  margin-right: 20px;
+  /*espacio entre ambos botones */
+  background-color: #074c7d;
+  color: rgb(246, 241, 241);
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  width: 42%;
+  border-radius: 50px; 
+  margin-bottom: 10px;
+  height: 30px;
+}
+.close-bton:hover  {
+  background-color: #53004d;
+}
+.submit-btn {
+  background-color: #074c7d;
+  color: rgb(248, 245, 245);
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  width: 42%;
+  border-radius: 50px; 
+  margin-bottom: 10px;
+  height: 30px;
+}
+.submit-btn:hover {
+  background-color: #53004d; /* Establece el color al pasar el mouse por encima del botón */
+}
+
+.social-media {
+  width: 100%;
+  columns: 2;
+}
+
+.sign-up-divider {
 
   text-align: center;
   font-size: 18px;
 }
 
-  .google{
-    background-color: #4CAF50;  
-    /*background-image: "./imagenes/imagenes/github.png";  */
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer;
-    width:47%;
-  
-  }
-  .github{
-    background-color: #b5b0b0;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer;
-    width:47%;
-  }
-  .container-text{
-    background-color: #bebcbc;
-    text-align: center;
-    /*margin: 2%; */
-    font-size: 18px;
-  }
-#btn-task-save{
-  background-color: #4CAF50;
-  color: white;
-    border: none;
-    border-radius: 50px;
-    padding: 8px 16px;
-    text-align: center;
-  
-  
-    font-size: 14px;
-    cursor: pointer;
-    width:20%;
-
-}
-#task-title{
-/*background-color: #4CAF50; */
-border-radius: 30px;
+.google {
+  border: none;
+  padding: 8px 16px;
   text-align: center;
-  width: 50%;
-  height: 40px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  width: 200px;
+  background-image: url('./imagenes/imagenes/google.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 25px;
+}
+
+.github {
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  background-image: url('./imagenes/imagenes/github.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 25px;
+  width: 200px
+}
+
+.container-text {
+  background-color: #bebcbc;
+  text-align: center;
+  /*margin: 2%; */
   font-size: 18px;
 }
-.location{
-   /* background-color: #4CAF50; */
-   border-radius: 30px;
-   text-align: center;
-   width: 40%;
-   height: 40px;
-   font-size: 18px;
+
+#task-title {
+  /*background-color: #4CAF50; */
+  border-radius: 30px;
+  text-align: center;
+  width: 20%;
+  height: 20px;
+  font-size: 18px;
+background-color: #83a5c6;
 }
-#task-content{
- /* background-color: #4CAF50; */
+
+.location {
+  /* background-color: #4CAF50; */
+  border-radius: 30px;
+  text-align: center;
+  width: 40%;
+  height: 30px;
+  font-size: 18px;
+ 
+}
+
+#task-content {
+  /* background-color: #4CAF50; */
   border-radius: 30px;
   text-align: center;
   width: 50%;
-  height: 180px;
+  height: 100px;
   font-size: 18px;
- resize: none;  /*Resize opcion de ampliar*/
+  resize: none;
+  /*Resize opcion de ampliar*/
+ 
+
+}
+
+.list-group-item {
+  /* Lista de Posts*/
+  top: 50%;
+  left: 50%;
+  transform: translate(45%);
+  width: 50%;
+  border-style: ridge;
+  margin: 2%;
+  list-style-type: none;
+  text-align: center;
+  overflow: hidden;
+  background-color: #e1e5eb;
+  border-radius: 18px;
+  margin-bottom: 50px;
+ 
+}
+
+.btn-delete,
+.btn-edit {
+  border-radius:5px;  
+  align-items: center;
+  justify-content: center;
   
 }
 
-.list-group-item{     /* Lista de Posts*/
- 
-  width: 90%;
-  left: 0px;
-  right: 0px;;
-  border-style:ridge;
-  margin: 2%;
-  list-style-type: none;
- text-align: center;
-  overflow: hidden;
-  background-color:#ffffff;
-  border-radius: 18px;
-  margin-bottom: 40px;
-
+.bottons {
+  border-radius: 50px;
+  background-color: #074c7d;
+  margin-bottom: 15px;
+  height: 30px;
 }
 
-.btn-delete, .btn-edit{
-  float:right;
-}
-
-.bottons{
-  background-color: #4CAF50;
-}
-
-#likee{
+#likee {
   width: 20px;
   cursor: pointer;
 }
 
-  /* Estilos para pantallas más pequeñas */
-  @media screen and (max-width: 600px) {
-    .modal-content {
-      width: 90%;
-      margin: 38% auto;
-    }
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 600px) {
+  .modal-content {
+    width: 90%;
+    margin: 38% auto;
   }
+}
+
+.profile {
+  text-align: center;
+  padding: 20px;
+}
+
+.profile img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.content {
+  padding: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}

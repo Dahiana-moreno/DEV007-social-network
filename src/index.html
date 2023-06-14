@@ -1,140 +1,134 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge">  -->
+    <title>Document</title>
 
-  <link rel="stylesheet" type="text/css" href="style.css">
- <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge">  -->
-  <title>Document</title>
-
-</head>
-<body>
+  </head>
+  <body>
 
     <!--Barra nevegacion-->
-  
 
     <!--<header class="header">  -->
-      <section id="vista1">
+    <section id="vista1">
       <ul class="navbar">
         <li><a class="active" href="#">TRAVELING PETS</a></li>
-        <li class="nav-item logged-out" > <a id="myBtnLogin" href="#" data-toggle="modal" data-target="#signupModal">Iniciar Sesión</a></li>
-      <!-- <li class="nav-item" ><a  class="nav-link logged-out" id="myBtnLoginUp" href="#" data-toggle="modal" data-target="#signoffModal">Registrarme</a></li>
-   --> 
+        <li class="nav-item logged-out"> <a id="myBtnLogin" href="#"
+            data-toggle="modal" data-target="#signupModal">INICIAR SESION</a></li>
+        <!-- <li class="nav-item" ><a  class="nav-link logged-out" id="myBtnLoginUp" href="#" data-toggle="modal" data-target="#signoffModal">Registrarme</a></li>
+   -->
       </ul>
-      <form id="form-loginup">
-        <h2>Registrarme</h2>
-        <input type="text" class="barra" id="name" placeholder="Nombres" required>
-        <input type="text" class="barra" id="last-name" placeholder="Apellidos" required>
+      <form id="form-loginup" class="formLogin">
+        <h2>Registrate e inicia sesion</h2>
+        <input type="text" class="barra" id="name" placeholder="Nombres"
+          required>
+        <input type="text" class="barra" id="last-name" placeholder="Apellidos"
+          required>
         <br>
         <input type="text" class="barra" id="email" placeholder="Email" required>
         <br>
-        <input type="text" class="barra" id="password" placeholder="contraseña" required> 
+        <input type="password" class="barra" id="password"
+          placeholder="contraseña" required>
 
-  <div class="modal-buttons">
+        <div class="modal-buttons">
           <button type="submit" class="submit-btn">Enviar</button>
           <button type="button" class="close-bton">Cerrar</button>
-  </div>  
-       
+        </div>
+
       </form>
     </section>
     <ul class="navbar">
-      <li><a class="nav-link perfil" href="#" id="perfil">Perfil</a></li>
-      <li style="float:right"><a class="nav-link logged-in" href="#" id="logout">Cerrar Sesión</a></li>
+      <li><a class="nav-linkPerfil" href="#" id="perfil">PERFIL</a></li>
+      <li style="float:right"><a class="nav-link logged-in" href="#" id="logout">CERRAR
+          SESION</a></li>
     </ul>
-  <!--  </header>  -->
-    
-        <form id="task-form">
-          <div class="container-text">
-         <h1>Bienvenido a la Red Social</h1>
-          <label for="title"> Title:</label> 
-         <p><input type="text" placeholder="Task Title" id="task-title" required> </p>
-         
-      
-          <input type="text" class ="location" id="task-location" placeholder="ubicacion" required><br>
+    <!--  </header>  -->
+
+    <form id="task-form">
+      <div class="container-text">
+        <h1>Bienvenido a traveling pets compartenos tus experiencia </h1>
+        <label for="title"> Title:</label>
+        <p><input type="text" placeholder="Task Title" id="task-title" required>
+        </p>
+
+        <input type="text" class="location" id="task-location"
+          placeholder="ubicacion" required><br>
         <br>
- 
-        
-         <label for="title">Descripcion:</label>    
-           <p>   <textarea id="task-content" placeholder="Escribe tu publicación"></textarea></p>
-           <input type="file" id="post-image" accept="image/*">
-        
-           <br>
-           <br>
-           <button id="btn-task-save" <!-onclick="uploadImage()">Publicar</button>
-            </div>
-            </form>
-            
-      
-    <div class="caja">   <!--Es quien guarda los posts-->
-     
-        
-        </div>
-         
-        
-          <!-- Aquí se mostrarán las publicaciones -->
-     
-         
-           
 
+        <label for="title">Descripcion:</label>
+        <p> <textarea id="task-content" placeholder="Escribe tu publicación"></textarea></p>
+        <input type="file" id="post-image" accept="image/*">
+        <br>
+        <br>
+        <div id="image-preview"></div>
+        <button class="close-bton" id="btn-task-save" <!-onclick="uploadImage()">Publicar</button>
+      </div>
+    </form>
 
-<!-- MODAL LOGIN -->
+    <div class="caja"> <!--Es quien guarda los posts-->
+
+    </div>
+
+    <!-- Aquí se mostrarán las publicaciones -->
+
+    <!-- MODAL LOGIN -->
     <div id="signupModal" class="signup">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2>Iniciar sesion</h2>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Iniciar sesion</h2>
 
         <form id="form-login">
-        <input type="text" class="barra" id="login-email" placeholder="Correo Electronico" required>
-        <br>
-        <input type="text" class="barra" id="login-password" placeholder="Contraseña" required>
-     
+          <input type="text" class="barra" id="login-email"
+            placeholder="Correo Electronico" required>
+          <br>
+          <input type="password" class="barra" id="login-password"
+            placeholder="Contraseña" required>
 
-        <div class="modal-buttons">
-          <button type="button" class="close-btn ">Cerrar</button>
-          <button type="submit" class="submit-btn">Enviar</button>
-      
+          <div class="modal-buttons">
+            <button type="submit" class="submit-btn">Continuar</button>
 
-        <p class="sign-up-divider">o inicia con</p>
-        <div class="social-media">
-          <ul class="social-media-icons">
-             <button type="submit" class="google"><a href="#"><i id="login-google">Google</i></a></button></li>
-             <button type="submit" class="github"><a href="#"><i id="login-github">Github</i></a></li>     
+            <p class="sign-up-divider">o inicia con</p>
+            <div class="social-media">
+              <ul class="social-media-icons">
+                <button type="submit" class="google"><a href="#"><i
+                      id="login-google"></i></a></button></li>
+              <button type="submit" class="github"><a href="#"><i
+                    id="login-github"></i></a></li>
+            </div>
+
+          </div>
+        </form>
       </div>
-   
-    </div>
-  </form>
-    </div>
-      
-       
-      </div>
-   
 
+    </div>
 
     <!-- MODAL LOGOUT -->
     <div id="signoffModal" class="signoff">
       <div class="modal-content">
 
-
         <h2>Crear cuenta</h2>
 
-      <form id="form-loginup">
-        <input type="text" class="barra" id="name" placeholder="Nombres" >
-        <input type="text" class="barra" id="last-name" placeholder="Apellidos" >
-        <br>
-        <input type="text" class="barra" id="email" placeholder="Email" >
-        <br>
-        <input type="text" class="barra" id="password" placeholder="contraseña" > 
+        <form id="form-loginup">
+          <input type="text" class="barra" id="name" placeholder="Nombres">
+          <input type="text" class="barra" id="last-name"
+            placeholder="Apellidos">
+          <br>
+          <input type="text" class="barra" id="email" placeholder="Email">
+          <br>
+          <input type="password" class="barra" id="password"
+            placeholder="contraseña">
 
-  <div class="modal-buttons">
-          <button type="submit" class="submit-btn">Enviar</button>
-          <button type="button" class="close-bton">Cerrar</button>
-  </div>  
-       
-      </form>
+          <div class="modal-buttons">
+            <button type="submit" class="submit-btn">Enviar</button>
+            <button type="button" class="close-bton">Cerrar</button>
+          </div>
 
+        </form>
 
       </div>
 
@@ -176,11 +170,6 @@ formLogin.addEventListener("submit", function(event){
   const closeBton = document.getElementsByClassName("close-bton")[0];
   const formLoginup= document.getElementById("form-loginup");
 
-
- /* btnsignoff.onclick = function() {
- modalup.style.display = "block";
-} */
-
 closeBton.onclick = function() {
   modalup.style.display = "none";
 }
@@ -197,17 +186,27 @@ formLoginup.addEventListener("submit", function(event){
   //cerra despues de enviar
   modalup.style.display = "none";
 });
-
-
-
     </script>
 
+    <section id='perfilUsuario' class="vistaPerfil">
+      <header>
+        <p>TRAVELING PETS</p>
+      </header>
+      <div class="profile">
+        <img src="imgn.jpg" alt="Profile Picture">
+        <h1>Kathe palomino</h1>
+        <p>desarrolladora front end developer</p>
+      </div>
 
- <script src="app.js" type="module"></script>
+      <div class="content">
+        <p>aqui mis publicaciones</p>
+      </div>
 
+      <footer>
+        <button>boton para cambiar de vista</button>
+      </footer>
+    </section>
+    <script src="app.js" type="module"></script>
 
-
-
-
-</body>
+  </body>
 </html>

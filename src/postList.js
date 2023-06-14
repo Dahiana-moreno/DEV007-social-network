@@ -8,18 +8,19 @@ import { saveTask, deleteTask, getTask, updateTask, auth, db } from "./firebase.
 const taskForm = document.getElementById('task-form')
 let editStatus = false;
 let id = '';
-
+//cuando se llena el formulario asigna el valor de las cajas de texto a las variables respectivas
 taskForm.addEventListener('submit', (e) => {
   e.preventDefault()
   const title = taskForm['task-title'] //donde quedara guardado los datos de los input
   const location = taskForm['task-location']
   const content = taskForm['task-content']
  // const imgen = taskForm['task-imgen']
-
+//Bandera- si se guarda o actualiza depende del true o false
   if(!editStatus){
-  //  console.log('editando');
-  saveTask(title.value, location.value, content.value, /*imgen*/)
+  //guardar tarea
+    saveTask(title.value, location.value, content.value, /*imgen*/)
   }else{
+  //actulizar tarea
   updateTask(id,{
     title: title.value,
     location : location.value,
@@ -33,16 +34,15 @@ taskForm.addEventListener('submit', (e) => {
 })
 auth
 console.log(auth)
-
 //post enviados
 const postList = document.querySelector('.caja');
-//console.log()
-
+//querysanapshot = tiene toda la coleccion
 export  const setupPosts = (querySnapshot) => {
+//longitud de los documentos 
 if (querySnapshot.length) {
 let html = ''
+//forEach para recorrer todos los documentos y los almacena para mostrar cada publicacion independiente
     querySnapshot.forEach(doc => {
-  //   console.log(doc);
         const post = doc.data()
         console.log(post) ;
         const li = `
@@ -69,17 +69,17 @@ let html = ''
         html += li
     })
   //  <img src= ${post.imgen}></p>
+  //html contiene todas las publicaciones y son enviadas al HTML
   postList.innerHTML = html
- //console.log(postList);
+  //selecciona el bloque de codigo que esta en el html con el id likebutton
 const likeButtons = document.querySelectorAll('.likeButton');
-// Agregar un evento de clic a cada botón
+// revisa cual fue el botón seleccionado
 likeButtons.forEach((button, index) => {
   button.addEventListener('click', async () => {
-
     try {
-      // Obtener todos los posts de la colección "posts"
+      // Obtener todas las publicaciones de la colección "posts"
       const postsQuerySnapshot = await getDocs(collection(db, 'posts'));
-      // Obtener el post correspondiente al índice del botón
+      // Obtener el post correspondiente al íd del botón
       const postDoc = postsQuerySnapshot.docs[index];
       // Incrementar el contador de "me gusta" en Firebase
       await updateDoc(postDoc.ref, { likes: increment(1) });   
@@ -92,47 +92,38 @@ likeButtons.forEach((button, index) => {
 
 //FUNCION PARA ELIMINAR
 const btnsDelete =  postList.querySelectorAll('.btn-delete')
-//console.log(btnsDelete)
+// mirar cual boton se selecciono y lo elimina
 btnsDelete.forEach( btn => {
   btn.addEventListener('click', ({target: { dataset }}) => {
- //console.log(dataset.id)
    deleteTask(dataset.id);
   })
 })
 
-
-//console.log(dataset.id)
-
+//Boton editar, revisar cual boton se seleciono y permite la edicion
 const btnsEdit =  postList.querySelectorAll('.btn-edit')
-//console.log(btnsDelete)
 btnsEdit.forEach (btn => {
   btn.addEventListener('click', async(e) => {
-   // console.log(dataset.id)
   const get = await getTask(e.target.dataset.id);
-   // console.log(get.data())
-  //  console.log(dataset.id)
-
-  // console.log(get)    //editar
-   const post = get.data();
-
+  const post = get.data();
+//el post que le dio editra, guarda los nuevos valores en la caja
   taskForm['task-title'].value = post.title //donde quedara guardado los datos de los input
   taskForm['task-location'].value = post.location
   taskForm['task-content'].value = post.content
  //taskForm['task-image'].value = post.image
- 
-
+//bandera, que se pone en true, para que no guarde sino que actualice
   editStatus = true;
-  //id = e.target.dataset.id;
-  id = get.id; //
- // console.log(id);
-  taskForm['btn-task-save'].innerText = 'Update';  //cambiar eltexto de guardar por editar
+  //id de la publicacion que se va a editar
+  id = get.id; 
+//cambia eltexto del boton guardar por editar
+  taskForm['btn-task-save'].innerText = 'Update';  
   })
 })
-
-
+//si no existe ninguna oublicacion debe aparecer este mensesaje 
 }else{
-   postList.innerHTML = '<h1> Login to see posts </h1>'  // aparecera luego de cerrar sesion
+   postList.innerHTML = '<h1> Login to see posts </h1>'  
   }
 }
  window.addEventListener('DOMContentLoaded', () => {
  })
+
+

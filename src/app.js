@@ -44,7 +44,9 @@ logout.addEventListener('click', async () => {
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');  //cerrar sesion
 const containerArea = document.querySelectorAll('.container-text');
+const perfil = document.querySelectorAll('.perfil');
 const vista1 = document.querySelectorAll('#vista1');
+const perfilUsuario = document.querySelectorAll('#perfilUsuario')
 
 const loginCheck = user =>{
   if (user){
@@ -52,12 +54,19 @@ const loginCheck = user =>{
     loggedOutLinks.forEach(link => link.style.display = 'none');
     containerArea.forEach(link => link.style.display = 'block')
     vista1.forEach(link => link.style.display = 'none');
+  //  perfilUsuario.forEach(link => link.style.display = 'block')
+ perfil.forEach(link => link.style.display = 'none');
   }else{
     containerArea.forEach(link => link.style.display = 'none')
 vista1.forEach(link => link.style.display = 'block');
+perfilUsuario.forEach(link => link.style.display = 'none')
     loggedInLinks.forEach(link => link.style.display = 'none');  
     loggedOutLinks.forEach(link => link.style.display = 'block');  
+  perfil.forEach(link => link.style.display = 'block'); 
+  
   }}
+
+  
 //verifica un evento de sesion
 onAuthStateChanged(auth, async (user) => {   
   //llama la linea 66 aparecer y desaparecer vistas
@@ -73,17 +82,6 @@ loginCheck(user);
   loginCheck(user)
 });
 
-
-const botonPerfil = document.getElementById("perfil");
-const perfil = document.getElementById("perfilUsuario");
-
-botonPerfil.addEventListener('click',function() {
-  perfil.style.display = 'none';
-  vista1.style.display = "block"
-  loggedInLinks.style.display = 'block';  
-  loggedOutLinks.style.display = 'block';
-  containerArea.style.display = 'block'
-});
 
 
 

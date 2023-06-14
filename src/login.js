@@ -76,7 +76,9 @@ postImageInput.addEventListener('change', () => {
 
     reader.onload = (event) => {
       const imageUrl = event.target.result; // Obtener la URL de la imagen
-
+      const storage = getStorage()
+      const storageRef = ref(storage, imageUrl)
+      uploadBytes(storageRef, file).then(snaphShot => console.log(snaphShot))
       // Mostrar la imagen en la previsualización
       imagePreview.innerHTML = `<img src="${imageUrl}" alt="Preview">`;
     };

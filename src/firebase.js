@@ -31,11 +31,12 @@ addDoc(collection(db, 'login '),{email, password}
 //obtiene autenticaccion
 export const auth = getAuth(app);
 //cuando existe un cambio en la sesion del usuario se obtiene ese usuario
+/*
 onAuthStateChanged(auth, async (user) => {
-const usuario =user.displayName;
+const usuario =user;
 console.log(usuario);
 })
-
+*/
 //agregar a la coleccion post el titulo la ubicacion y el contenido 
 export const saveTask = (title, location, content, /*imgen */) => {
   addDoc(collection(db, 'posts'),{title, location, content /*imgen} */});

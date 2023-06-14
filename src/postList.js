@@ -8,6 +8,7 @@ import { saveTask, deleteTask, getTask, updateTask, auth, db } from "./firebase.
 const taskForm = document.getElementById('task-form')
 let editStatus = false;
 let id = '';
+
 //cuando se llena el formulario asigna el valor de las cajas de texto a las variables respectivas
 taskForm.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -58,7 +59,7 @@ let html = ''
             <button Class="likeButton" data-id ="${doc.id}" >
             <img id = "likee" src="./imagenes/imagenes/reaction-love.png"  alt=""/>
             </button>                     
-            <span class = "likeCount">${post.likes} reacciones </span>
+            <span class = "likeCount">${post.likes ? post.likes.length : 0} reacciones </span>
             <button class ="btn-delete" data-id ="${doc.id}">Delete</button>
             <button class ="btn-edit" data-id ="${doc.id}">Edit</button>
             </div>
@@ -73,24 +74,47 @@ let html = ''
   postList.innerHTML = html
   //selecciona el bloque de codigo que esta en el html con el id likebutton
 const likeButtons = document.querySelectorAll('.likeButton');
-// revisa cual fue el botón seleccionado
-likeButtons.forEach((button, index) => {
+
+let likedPosts = []
+likeButtons.forEach((button) => {
   button.addEventListener('click', async () => {
     try {
-      // Obtener todas las publicaciones de la colección "posts"
+     // const postId =  button.dataset.id;
+    //  if(!likedPosts.length === 0){
+        const postId =  button.dataset.id;
+          if(!likedPosts.includes(postId)){
       const postsQuerySnapshot = await getDocs(collection(db, 'posts'));
-      // Obtener el post correspondiente al íd del botón
-      const postDoc = postsQuerySnapshot.docs[index];
-      // Incrementar el contador de "me gusta" en Firebase
-      await updateDoc(postDoc.ref, { likes: increment(1) });   
-    } catch (error) {
-      console.error('Error al actualizar los "me gusta":', error);
+      const postDoc = postsQuerySnapshot.docs.find((doc) => doc.id === postId);
+     console.log(postDoc.data())
+      if(postDoc){
+        if (!postDoc.data().likes) {
+          await updateDoc(postDoc.ref, { likes: [auth.currentUser.email] });
+        } else {
+          if (postDoc.data().likes.includes(auth.currentUser.email)) {
+            await updateDoc(postDoc.ref, { likes: postDoc.data().likes.filter(person => person !== auth.currentUser.email ) }); 
+          } else {
+            await updateDoc(postDoc.ref, { likes: [...postDoc.data().likes, auth.currentUser.email] });
+          }
+        }
+        
+      likedPosts.push(postId);
+
+    //  likeButtons.forEach((btn) => {
+       
+      
     }
+  }
+
+    } 
+    catch (error) {
+      console.error('Error al actualizar los "me gusta":', error);
+    }   button.disabled = true;
   });
 });     
 
 
 //FUNCION PARA ELIMINAR
+/*
 const btnsDelete =  postList.querySelectorAll('.btn-delete')
 // mirar cual boton se selecciono y lo elimina
 btnsDelete.forEach( btn => {
@@ -98,7 +122,19 @@ btnsDelete.forEach( btn => {
    deleteTask(dataset.id);
   })
 })
+*/
 
+const btnsDelete = postList.querySelectorAll('.btn-delete');
+
+btnsDelete.forEach(btn => {
+  btn.addEventListener('click', ({ target: { dataset } }) => {
+    const shouldDelete = confirm('¿Estás seguro de que deseas eliminar esta tarea?');
+
+    if (shouldDelete) {
+      deleteTask(dataset.id);
+    }
+  });
+});
 //Boton editar, revisar cual boton se seleciono y permite la edicion
 const btnsEdit =  postList.querySelectorAll('.btn-edit')
 btnsEdit.forEach (btn => {
@@ -120,7 +156,7 @@ btnsEdit.forEach (btn => {
 })
 //si no existe ninguna oublicacion debe aparecer este mensesaje 
 }else{
-   postList.innerHTML = '<h1> Login to see posts </h1>'  
+   postList.innerHTML = '<h1> </h1>'  
   }
 }
  window.addEventListener('DOMContentLoaded', () => {

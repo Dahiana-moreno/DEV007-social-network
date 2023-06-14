@@ -43,7 +43,7 @@
       </form>
     </section>
     <ul class="navbar">
-      <li><a class="nav-linkPerfil" href="#" id="perfil">PERFIL</a></li>
+      <li><a class="nav-link Perfil"  href="#" id="perfil">PERFIL</a></li>  -->
       <li style="float:right"><a class="nav-link logged-in" href="#" id="logout">CERRAR
           SESION</a></li>
     </ul>
@@ -66,7 +66,7 @@
         <br>
         <br>
         <div id="image-preview"></div>
-        <button class="close-bton" id="btn-task-save" <!-onclick="uploadImage()">Publicar</button>
+        <button class="close-bton" id="btn-task-save" <!-onclick="uploadImage()"-->>Publicar</button>
       </div>
     </form>
 
@@ -75,6 +75,32 @@
     </div>
 
     <!-- Aquí se mostrarán las publicaciones -->
+<!-- ACA APARECERA EL PERFIL DEL USUARIO   -->
+    <section id='perfilUsuario' class="vistaPerfil">
+     <!-- <ul class="navbar">
+        <li><a class="nav-link perfil"  href="#" id="perfil">PERFIL</a></li> 
+      </ul>-->
+      <header>
+        <p>TRAVELING PETS</p>
+      </header>
+      <div class="profile">
+        <img src="imgn.jpg" alt="Profile Picture">
+        <h1>Kathe palomino</h1>
+        <p>desarrolladora front end developer</p>
+      </div>
+
+      <div class="content">
+        <p>aqui mis publicaciones</p>
+      </div>
+
+      <footer>
+        <button>boton para cambiar de vista</button>
+      </footer>
+    </section>
+
+
+
+
 
     <!-- MODAL LOGIN -->
     <div id="signupModal" class="signup">
@@ -95,11 +121,9 @@
             <p class="sign-up-divider">o inicia con</p>
             <div class="social-media">
               <ul class="social-media-icons">
-                <button type="submit" class="google"><a href="#"><i
-                      id="login-google"></i></a></button></li>
-              <button type="submit" class="github"><a href="#"><i
-                    id="login-github"></i></a></li>
-            </div>
+                 <button type="submit" class="google"><a href="#"><i id="login-google">l</i></a></button></li>
+                 <button type="submit" class="github"><a href="#"><i id="login-github">l</i></a></li>     
+          </div>
 
           </div>
         </form>
@@ -188,24 +212,7 @@ formLoginup.addEventListener("submit", function(event){
 });
     </script>
 
-    <section id='perfilUsuario' class="vistaPerfil">
-      <header>
-        <p>TRAVELING PETS</p>
-      </header>
-      <div class="profile">
-        <img src="imgn.jpg" alt="Profile Picture">
-        <h1>Kathe palomino</h1>
-        <p>desarrolladora front end developer</p>
-      </div>
-
-      <div class="content">
-        <p>aqui mis publicaciones</p>
-      </div>
-
-      <footer>
-        <button>boton para cambiar de vista</button>
-      </footer>
-    </section>
+   
     <script src="app.js" type="module"></script>
 
   </body>

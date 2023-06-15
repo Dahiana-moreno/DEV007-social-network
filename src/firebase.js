@@ -38,9 +38,15 @@ console.log(usuario);
 })
 */
 //agregar a la coleccion post el titulo la ubicacion y el contenido 
+
 export const saveTask = (title, location, content, url, date) => {
   addDoc(collection(db, 'posts'), { title, location, content, url, date });
 }
+
+export const saveTask = (title, location, content, url,) => {
+  addDoc(collection(db, 'posts'),{title, location, content, url});
+  }
+
 //se obtienen todos los documentos de la coleccion post
 export const getTasks = () => getDocs(collection(db, 'posts'));
 // elimina la coeccion asignada a un id

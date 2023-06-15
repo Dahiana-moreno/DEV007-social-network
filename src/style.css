@@ -193,8 +193,9 @@ li a {
   text-decoration: none;
   display:flex;
   cursor: pointer;
+  background-color: #888;
   width: 50%;
-  background-image: url('./imagenes/imagenes/google.png');
+ /* background-image: url('./imagenes/imagenes/google.png'); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -292,7 +293,12 @@ background-color: #83a5c6;
   width: 20px;
   cursor: pointer;
 }
-
+#url{
+  width: 95%;
+}
+.vistaPerfil{
+  display: none;
+}
 /* Estilos para pantallas más pequeñas */
 @media screen and (max-width: 600px) {
   .modal-content {
@@ -321,3 +327,4 @@ footer {
   padding: 20px;
   text-align: center;
 }
+

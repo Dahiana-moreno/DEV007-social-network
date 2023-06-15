@@ -15,18 +15,18 @@ taskForm.addEventListener('submit', (e) => {
   const title = taskForm['task-title'] //donde quedara guardado los datos de los input
   const location = taskForm['task-location']
   const content = taskForm['task-content']
- // const imgen = taskForm['task-imgen']
+ const url = taskForm['task-url']
 //Bandera- si se guarda o actualiza depende del true o false
   if(!editStatus){
   //guardar tarea
-    saveTask(title.value, location.value, content.value, /*imgen*/)
+    saveTask(title.value, location.value, content.value, url.value)
   }else{
   //actulizar tarea
   updateTask(id,{
     title: title.value,
     location : location.value,
     content: content.value,
-  //imgen: imgen.value,
+    url: url.value,
 
   });
   editStatus = false;
@@ -52,12 +52,12 @@ let html = ''
             <h2>${post.title}</h2>
             <p>${post.location}</p>
             <p>${post.content}</p>
-            <p><img src= ${post.imgen}></p>
-            <p>${post.user}</p>
+         <p> <img id="url" src= ${post.url}></p>
+        
 
             <div class="bottons">                  
             <button Class="likeButton" data-id ="${doc.id}" >
-            <img id = "likee" src="./imagenes/imagenes/reaction-love.png"  alt=""/>
+            <img id = "likee" src="./imagenes/imagenes/huellitas.png"  alt=""/>
             </button>                     
             <span class = "likeCount">${post.likes ? post.likes.length : 0} reacciones </span>
             <button class ="btn-delete" data-id ="${doc.id}">Delete</button>
@@ -72,6 +72,26 @@ let html = ''
   //  <img src= ${post.imgen}></p>
   //html contiene todas las publicaciones y son enviadas al HTML
   postList.innerHTML = html
+
+
+
+  const enlacePerfil = document.getElementById('perfil');
+  const seccionPerfil = document.getElementById('perfilUsuario');
+  
+  // Agrega un evento de clic al enlace "Perfil"
+  enlacePerfil.addEventListener('click', function(e) {
+    e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+  
+    // Muestra u oculta la sección de perfil según su estado actual
+    if (seccionPerfil.style.display === 'none') {
+      seccionPerfil.style.display = 'block';
+    } else {
+      seccionPerfil.style.display = 'none';
+    }
+  });
+
+
+  
   //selecciona el bloque de codigo que esta en el html con el id likebutton
 const likeButtons = document.querySelectorAll('.likeButton');
 
@@ -145,7 +165,7 @@ btnsEdit.forEach (btn => {
   taskForm['task-title'].value = post.title //donde quedara guardado los datos de los input
   taskForm['task-location'].value = post.location
   taskForm['task-content'].value = post.content
- //taskForm['task-image'].value = post.image
+  taskForm['task-url'].value = post.url
 //bandera, que se pone en true, para que no guarde sino que actualice
   editStatus = true;
   //id de la publicacion que se va a editar

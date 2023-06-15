@@ -58,14 +58,14 @@ console.log(credentials);
 } catch (error){
  alert("Se ha producido un error " + error.message)   
 
-formLogin.reset()  //limpia el formulario luego de su envio
+ //limpia el formulario luego de su envio
 }
-});
+}); formLogin.reset() 
 
-
+/*
 
 //previsualizar la imagen 
-const postImageInput = document.getElementById("post-image");
+const postImageInput = document.getElementById("task-url");
 const imagePreview = document.getElementById("image-preview");
 
 postImageInput.addEventListener('change', () => {
@@ -90,3 +90,4 @@ postImageInput.addEventListener('change', () => {
     imagePreview.innerHTML = '';
   }
 });
+*/

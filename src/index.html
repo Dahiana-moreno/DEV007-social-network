@@ -43,7 +43,7 @@
       </form>
     </section>
     <ul class="navbar">
-      <li><a class="nav-link Perfil"  href="#" id="perfil">PERFIL</a></li>  -->
+      <li><a class="nav-link Perfil"  href="#" id="perfil">PERFIL</a></li> 
       <li style="float:right"><a class="nav-link logged-in" href="#" id="logout">CERRAR
           SESION</a></li>
     </ul>
@@ -62,11 +62,16 @@
 
         <label for="title">Descripcion:</label>
         <p> <textarea id="task-content" placeholder="Escribe tu publicación"></textarea></p>
-        <input type="file" id="post-image" accept="image/*">
+       <!-- <input type="file" id="post-image" accept="image/*">  -->
+
+         <label for="url">URL:</label>
+        <p><input type="text" placeholder="https://www.todopapas.com/img/cuentos/1/4/7/5/1475.jpg" id="task-url" required>
         <br>
         <br>
+       
+<div id="imagen-container"></div>
         <div id="image-preview"></div>
-        <button class="close-bton" id="btn-task-save" <!-onclick="uploadImage()"-->>Publicar</button>
+        <button class="close-bton" id="btn-task-save">Publicar</button>
       </div>
     </form>
 
@@ -77,9 +82,7 @@
     <!-- Aquí se mostrarán las publicaciones -->
 <!-- ACA APARECERA EL PERFIL DEL USUARIO   -->
     <section id='perfilUsuario' class="vistaPerfil">
-     <!-- <ul class="navbar">
-        <li><a class="nav-link perfil"  href="#" id="perfil">PERFIL</a></li> 
-      </ul>-->
+  
       <header>
         <p>TRAVELING PETS</p>
       </header>
@@ -91,7 +94,7 @@
 
       <div class="content">
         <p>aqui mis publicaciones</p>
-      </div>
+      </"div>
 
       <footer>
         <button>boton para cambiar de vista</button>
@@ -121,7 +124,7 @@
             <p class="sign-up-divider">o inicia con</p>
             <div class="social-media">
               <ul class="social-media-icons">
-                 <button type="submit" class="google"><a href="#"><i id="login-google">l</i></a></button></li>
+                 <button type="submit" class="google"><a href="#"><i id="login-google"><img src="./imagenes/imagenes/google.png"></i></a></button></li>
                  <button type="submit" class="github"><a href="#"><i id="login-github">l</i></a></li>     
           </div>
 

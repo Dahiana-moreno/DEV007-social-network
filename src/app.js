@@ -44,7 +44,7 @@ logout.addEventListener('click', async () => {
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');  //cerrar sesion
 const containerArea = document.querySelectorAll('.container-text');
-const perfil = document.querySelectorAll('.perfil');
+const perfil = document.querySelectorAll('.Perfil');
 const vista1 = document.querySelectorAll('#vista1');
 const perfilUsuario = document.querySelectorAll('#perfilUsuario')
 
@@ -53,16 +53,17 @@ const loginCheck = user =>{
     loggedInLinks.forEach(link => link.style.display = 'block');  
     loggedOutLinks.forEach(link => link.style.display = 'none');
     containerArea.forEach(link => link.style.display = 'block')
-    vista1.forEach(link => link.style.display = 'none');
-  //  perfilUsuario.forEach(link => link.style.display = 'block')
- perfil.forEach(link => link.style.display = 'none');
+   vista1.forEach(link => link.style.display = 'none');
+
+  //perfilUsuario.forEach(link => link.style.display = 'block')
+perfil.forEach(link => link.style.display = 'block');
   }else{
     containerArea.forEach(link => link.style.display = 'none')
 vista1.forEach(link => link.style.display = 'block');
-perfilUsuario.forEach(link => link.style.display = 'none')
+//perfilUsuario.forEach(link => link.style.display = 'block')
     loggedInLinks.forEach(link => link.style.display = 'none');  
     loggedOutLinks.forEach(link => link.style.display = 'block');  
-  perfil.forEach(link => link.style.display = 'block'); 
+  perfil.forEach(link => link.style.display = 'none'); 
   
   }}
 

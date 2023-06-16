@@ -1,8 +1,10 @@
-import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"; // autenticacion -->
-import { auth } from './firebase.js';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-duplicates */
+import {
+  signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, GithubAuthProvider,
+} from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js'; // autenticacion -->
 
-import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"; // autenticacion -->
-import { GithubAuthProvider } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"; // autenticacion -->
+import { auth } from './firebase.js';
 
 // GOOGLE
 const googleButton = document.querySelector('#login-google');
@@ -57,7 +59,7 @@ formLogin.addEventListener('submit', async (e) => {
     const credentials = await signInWithEmailAndPassword(auth, mail, passwordd);
     console.log(credentials);
   } catch (error) {
-    alert("Se ha producido un error " + error.message);
+    alert(`Se ha producido un error ' ${error.message}`);
 
     // limpia el formulario luego de su envio
   }

@@ -47,14 +47,16 @@ export const setupPosts = (querySnapshot) => {
     let html = '';
     // forEach recorrertodos losdocumentos ylos almacena para mostrar cada publicacion independiente
     const posts = [];
-    querySnapshot.forEach(element => {
+    querySnapshot.forEach((element) => {
       posts.push(element);
     });
-    querySnapshot.sort(
-      (objA, objB) => Number(objA.date) - Number(objB.date),
-    ).forEach( doc => {
+    // Ordenar los posts en orden descendente basado en la propiedad date
+
+    posts.sort((objA, objB) => Number(objB.data().date) - Number(objA.data().date));
+
+    posts.forEach((doc) => {
       const post = doc.data();
-      console.log(post);
+      // console.log(post);
       const li = `
 
 //cuando se llena el formulario asigna el valor de las cajas de texto a las variables respectivas

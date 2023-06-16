@@ -1,9 +1,10 @@
-
 import { createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";  //autenticacion
 import { collection, onSnapshot } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { auth, saveForm, db } from './firebase.js';
 import { setupPosts } from './postList.js';
+
 import './login.js';
+
 window.addEventListener('DOMContentLoaded', () => {
 });
 
@@ -93,26 +94,22 @@ const vista1 = document.querySelectorAll('#vista1');
 
 // const perfilUsuario = document.querySelectorAll('#perfilUsuario')
 
-const perfilUsuario = document.querySelectorAll('#perfilUsuario')
 
-
-const loginCheck = user => {
+const loginCheck = (user) => {
   if (user) {
-    loggedInLinks.forEach(link => link.style.display = 'block');
-    loggedOutLinks.forEach(link => link.style.display = 'none');
-
-    containerArea.forEach(link => link.style.display = 'block');
-    vista1.forEach(link => link.style.display = 'none');
-
+    loggedInLinks.forEach((link) => { link.style.display = 'block'; });
+    loggedOutLinks.forEach((link) => { link.style.display = 'none'; });
+    containerArea.forEach((link) => { link.style.display = 'block'; });
+    vista1.forEach((link) => { link.style.display = 'none'; });
     // perfilUsuario.forEach(link => link.style.display = 'block')
-    perfil.forEach(link => link.style.display = 'block');
+    perfil.forEach((link) => { link.style.display = 'block'; });
   } else {
-    containerArea.forEach(link => link.style.display = 'none');
-    vista1.forEach(link => link.style.display = 'block');
+    containerArea.forEach((link) => { link.style.display = 'none'; });
+    vista1.forEach((link) => { link.style.display = 'block'; });
     // perfilUsuario.forEach(link => link.style.display = 'block')
-    loggedInLinks.forEach(link => link.style.display = 'none');
-    loggedOutLinks.forEach(link => link.style.display = 'block');
-    perfil.forEach(link => link.style.display = 'none');
+    loggedInLinks.forEach((link) => { link.style.display = 'none'; });
+    loggedOutLinks.forEach((link) => { link.style.display = 'block'; });
+    perfil.forEach((link) => { link.style.display = 'none'; });
   }
 };
 

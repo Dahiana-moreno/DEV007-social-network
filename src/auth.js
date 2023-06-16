@@ -1,4 +1,4 @@
-/*const auth = firebase.auth();
+/* const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 auth.languageCode = "es";
 
@@ -11,6 +11,5 @@ export async function login() {
     throw new Error(error);
   }
 }
-export function logout(){  
-  
-} */
+export function logout(){
+*/

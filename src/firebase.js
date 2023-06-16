@@ -26,6 +26,7 @@ export const auth = getAuth(app);
 // cuando existe un cambio en la sesion del usuario se obtiene ese usuario
 
 onAuthStateChanged(auth, async (user) => {
+
   const usuario = user;
   console.log(usuario);
 });
@@ -36,7 +37,13 @@ export const saveTask = (title, location, content, url, date) => { addDoc(
   { title, location, content, url, date }
 );
 };
-// se obtienen todos los documentos de la coleccion post
+
+const usuario =user;
+console.log(usuario);
+});
+
+//se obtienen todos los documentos de la coleccion post
+
 export const getTasks = () => getDocs(collection(db, 'posts'));
 // elimina la coeccion asignada a un id
 export const deleteTask = (id) => deleteDoc(doc(db, 'posts', id));

@@ -28,7 +28,6 @@ header {
   margin: 0;
   overflow: hidden;
   background-color: #074c7d;
-  list-style-type: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -328,3 +327,20 @@ footer {
   text-align: center;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}

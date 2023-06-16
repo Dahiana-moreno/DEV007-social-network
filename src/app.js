@@ -1,5 +1,6 @@
-import { createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"; /* /* autenticacion */
-import { collection, onSnapshot } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+/* eslint-disable import/no-unresolved */
+import { createUserWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js'; /* /* autenticacion */
+import { collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
 import { auth, saveForm, db } from './firebase.js';
 import { setupPosts } from './postList.js';
 

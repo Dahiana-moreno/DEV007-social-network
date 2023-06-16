@@ -1,6 +1,8 @@
-import {initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js';
-// TODO: Add SDKs for Firebase products that you want to use   https://firebase.google.com/docs/web/setup#available-libraries   -->
-import { getFirestore, collection, addDoc, deleteDoc, doc, getDoc, updateDoc, getDocs } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
+/* eslint-disable import/no-unresolved */
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js';
+import {
+  getFirestore, collection, addDoc, deleteDoc, doc, getDoc, updateDoc, getDocs,
+} from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js'; // autenticacion -->
 
 const firebaseConfig = {
@@ -31,10 +33,13 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 // agregar a la coleccion post el titulo la ubicacion y el contenido
-export const saveTask = (title, location, content, url, date) => { addDoc(
-  collection(db, 'posts'),
-  { title, location, content, url, date }
-);
+export const saveTask = (title, location, content, url, date) => {
+  addDoc(
+    collection(db, 'posts'),
+    {
+      title, location, content, url, date,
+    },
+  );
 };
 // se obtienen todos los documentos de la coleccion post
 export const getTasks = () => getDocs(collection(db, 'posts'));

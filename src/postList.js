@@ -63,6 +63,46 @@ export const setupPosts = (querySnapshot) => {
       const post = doc.data();
       // console.log(post);
       const li = `
+
+//cuando se llena el formulario asigna el valor de las cajas de texto a las variables respectivas
+taskForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const title = taskForm['task-title'] //donde quedara guardado los datos de los input
+  const location = taskForm['task-location']
+  const content = taskForm['task-content']
+ const url = taskForm['task-url']
+//Bandera- si se guarda o actualiza depende del true o false
+  if(!editStatus){
+  //guardar tarea
+    saveTask(title.value, location.value, content.value, url.value)
+  }else{
+  //actulizar tarea
+  updateTask(id,{
+    title: title.value,
+    location : location.value,
+    content: content.value,
+    url: url.value,
+
+  });
+  editStatus = false;
+  }
+  taskForm.reset();
+})
+auth
+console.log(auth)
+//post enviados
+const postList = document.querySelector('.caja');
+//querysanapshot = tiene toda la coleccion
+export  const setupPosts = (querySnapshot) => {
+//longitud de los documentos 
+if (querySnapshot.length) {
+let html = ''
+//forEach para recorrer todos los documentos y los almacena para mostrar cada publicacion independiente
+    querySnapshot.forEach(doc => {
+        const post = doc.data()
+        console.log(post) ;
+        const li = `
+
       
         <div class="list-group-item">       
             <h2>${post.title}</h2>
@@ -136,6 +176,7 @@ export const setupPosts = (querySnapshot) => {
             }
             likedPosts.push(postId);
           }
+
         } catch (error) {
           console.error('Error al actualizar los "me gusta":', error);
         }button.disabled = true;
@@ -184,3 +225,5 @@ export const setupPosts = (querySnapshot) => {
 };
 window.addEventListener('DOMContentLoaded', () => {
 });
+
+
